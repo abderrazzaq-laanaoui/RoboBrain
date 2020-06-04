@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="container">
+    <header>
+        <h1>
+            RoboBrain
+        </h1>
+    </header>
+    <hr>
+    <main class="row">
+        <!-- 12 parties-->
+        <!-- parametres-->
+        <section class="col-md-3">
+            <div class="form-group">
+                <label for="exampleInputEmail1">ligne number</label>
+                <input id="ligne" type="number" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">column number</label>
+                <input id="colonne" type="number" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">time</label>
+                <input id="timer" type="number" class="form-control" id="exampleInputEmail1">
+            </div>
+            <button onclick="create()" type="submit" class="btn btn-primary">START</button>
+            <div class="spinner-border hide" id="spinner" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="msg">
+
+            </div>
+        </section>
+        <!-- plateau du jeu-->
+        <section class="col-md-9">
+            <div id="divTimer">
+
+            </div>
+            <center>
+                <table>
+                    <tbody id="plateau">
+
+                    </tbody>
+                </table>
+            </center>
+
+        </section>
+    </main>
+</body>
+
+</html>

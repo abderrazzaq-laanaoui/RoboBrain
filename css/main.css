@@ -1,5 +1,8 @@
 .container>header>h1 {
     text-align: center;
+    font-family: 'Bigelow Rules', cursive;
+    font-size: 72px;
+    font-weight: bold;
 }
 
 #plateau td {
@@ -19,6 +22,11 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E2E2E2, #C9D6FF);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+}
+
+center {
+    margin-bottom: 100px;
 }
 
 .btn {
@@ -75,4 +83,11 @@ img {
 .win {
     background-color: green;
     border: 1px solid springgreen;
+}
+
+footer a,
+footer a:hover,
+footer a:visited,
+footer a:link {
+    color: #FFFFFF;
 }

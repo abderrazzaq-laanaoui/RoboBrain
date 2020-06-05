@@ -12,6 +12,7 @@ let loseMsg = "<h1>GAME OVER</h1>";
 let winMsg = "<h1>YOU WIN</h1>";
 let match;
 let pears;
+let j;
 let tbody=document.getElementById("plateau");
 let msg = document.querySelector(".msg");
 function create()
@@ -51,6 +52,7 @@ function create()
         tbody.appendChild(tr);
     }
     // generation des nombres dans des cases aleatoires
+    j=0;
     for(let i=1;i<=totalNbr/2;i++)
     {
         let randonLigne;
@@ -59,15 +61,15 @@ function create()
         randonLigne=parseInt(Math.random()*1000%ligne)
         randonColonne=parseInt(Math.random()*1000%colonne)
         }while(tbody.children[randonLigne].children[randonColonne].innerHTML!="");
-        tbody.children[randonLigne].children[randonColonne].innerHTML="<img src='https://robohash.org/"+i+"'>";
-        
+        tbody.children[randonLigne].children[randonColonne].innerHTML=`<img id="${j}" src="https://robohash.org/img${i}">`;
+        j++;
         let randonLigne2;
         let randonColonne2;
         do{
         randonLigne2=parseInt(Math.random()*1000%ligne)
         randonColonne2=parseInt(Math.random()*1000%colonne)
         }while(tbody.children[randonLigne2].children[randonColonne2].innerHTML!="");
-        tbody.children[randonLigne2].children[randonColonne2].innerHTML="<img src='https://robohash.org/"+i+"'>";
+        tbody.children[randonLigne2].children[randonColonne2].innerHTML=`<img id="${j}" src="https://robohash.org/img${i}">`;
     }
    
     let tds=document.getElementsByTagName("td");
@@ -130,7 +132,7 @@ function initialiserGame()
 
 function tester()
 {
-    if(tdNbr1.firstChild.getAttribute("src") ==tdNbr2.firstChild.getAttribute("src"))
+    if(tdNbr1.firstChild.getAttribute("src") ==tdNbr2.firstChild.getAttribute("src") && tdNbr1.firstChild.getAttribute("id") !=tdNbr2.firstChild.getAttribute("id"))
     {
         tdNbr1.classList.add("trouve");
         tdNbr2.classList.add("trouve");
